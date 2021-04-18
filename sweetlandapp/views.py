@@ -130,4 +130,11 @@ def send_mail_sw(request):
         recipient_list=[request.POST['email'], 'Wherefored@gmail.com'],
         fail_silently=False,
     )
-    return redirect('main-page')
+    return redirect('cart-clear')
+
+
+def cart_clear(request):
+    Cart.objects.all().delete()
+    return redirect('cart-clear')
+
+
