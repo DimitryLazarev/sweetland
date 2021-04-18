@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if err %}
+
+<div style="color: red; text-align: center; font-size: 30px;">{{ err }}</div>
+
+{% endif %}
+<form action="{% url 'order-page' %}" method="POST">
+<table class="cart_table">
+    <tr>
+        <td style="width: 100px; height: 90px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+            <div style="position: absolute; left: 500px; display: inline-flex;">image</div>
+            <div style="position: absolute; left: 650px; display: inline-flex;">name</div>
+            <div style="position: absolute; left: 830px; display: inline-flex;">description</div>
+            <div style="position: absolute; left: 1220px; display: inline-flex;">x quantity </div>
+            <div style="position: absolute; left: 1350px; display: inline-flex;">price </div>
+        </td>
+    </tr>
+    <tr>
+{% for product in products %}
+        <td class="cart_td">
+               {% load static %}
+               <img src="{{ product.image.url }}" class="cart_prod_img"><br>
+            <div style="position: absolute; left: 200px; display: inline-flex;">{{ product.name }}</div>
+            <div style="position: absolute; left: 350px; display: inline-flex;">{{ product.description }}</div>
+            <div style="position: absolute; left: 800px; display: inline-flex;">x
+                    <input type="number" value="{{ product.quantity }}" class="cart_input" name="{{ product.id }}">
+            </div>
+            <div style="position: absolute; left: 900px; display: inline-flex;">{{ product.price }}</div>
+        </td>
+            </tr>
+        {% if forloop.counter|divisibleby:5 %}
+        {% endif %}
+    {% endfor %}
+</table>
+
+    <div class="center">
+    <button class="order_button">
+        place an order
+    </button>
+    </div>
+</form>
+
+    {% endblock %}

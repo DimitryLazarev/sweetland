@@ -1,0 +1,21 @@
+<form action="{% url 'chocolate' %}"  method="post" enctype="multipart/form-data">{% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Create</button>
+</form>
+
+
+<form action="{% url 'products-showcase' product_type='chocolate' %}"  method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Create</button>
+</form>
+
+
+
+Products.objects.create(name=request.POST['name'],
+                                image=request.FILES['file'],
+                                description=request.POST['description'],
+                                full_description=request.POST['full_description'],
+                                product_type=request.POST['product_type'],
+                                price=request.POST['price'])
+        products = Products.objects.filter(product_type=product_type)

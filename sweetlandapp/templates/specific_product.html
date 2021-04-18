@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<img src="{{ product.image.url }}" class="specific_prod_img">
+
+
+<div class="specific_prod_name">{{ product.name }}</div>
+<div class="specific_prod_description">{{ product.full_description }}</div>
+<div class="specific_prod_price">Price: {{ product.price }}</div>
+
+<div class="price">
+<form action="{% url 'add-to-cart' id=product.id %}" method="get">
+            <input type="number" value="1" class="specific_prod_input" name="quantity">
+                    <button type="submit" class="specific_prod_button">
+                        add to cart
+                    </button>
+            </form>
+</div>
+{% endblock %}

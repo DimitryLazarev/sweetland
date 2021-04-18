@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sweetland</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+    <style>
+
+    .main-header {
+    background-color: #2A2145;
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+
+.title a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    position: relative;
+    top: 15px;
+    float: left;
+    text-align: left;
+    display: inline-block;
+    color: white;
+    margin-left: 30px;
+    width: 80%;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 200px;
+}
+
+  .ghli a {
+  font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    position: relative;
+    top: 25px;
+    float: right;
+    text-align: right;
+    display: inline-block;
+    color: white;
+    margin-right: 10px;
+    width: 80%;
+    text-decoration: none;
+    max-width: 100px;
+  }
+
+  .ghli:hover a {
+  text-decoration: none;
+  color: white;
+  }
+
+  .register_login {
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    border-color: white;
+    background-color: #2F2130;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    top: 13px;
+    float: right;
+    display: inline-block;
+    color: white;
+    margin-right: 0px;
+  }
+
+  a {
+  text-decoration: none;
+  color: white;
+  }
+
+  .created_for {
+  width: 500px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  color: gray;
+  font-family: 'Raleway', sans-serif;
+  }
+
+ /* The magic */
+ .col {
+	 overflow: hidden;
+	 position: relative;
+}
+ .slide {
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 left: 0;
+	/* Visibility delay gives the previously hovered element time to slide out before disappearing. Remove the `visibility` transition to slide in current element without sliding out previous element */
+	 transition: all 0.275s ease-in-out, visibility 0s 0.275s;
+	 visibility: hidden;
+	 will-change: transform;
+	 transform: translateY(100%);
+}
+ .row:hover ~ .row .slide {
+	 transform: translateY(-100%);
+}
+ .row:hover .slide {
+	 transform: translateX(100%);
+}
+ .row:hover .col:hover ~ .col .slide {
+	 transform: translateX(-100%);
+}
+ .row:hover .col:hover .slide {
+	 transform: none;
+	 visibility: visible;
+	 transition-delay: 0s;
+}
+/* Pen styling */
+ * {
+	 box-sizing: border-box;
+}
+ body {
+	 background: #2F2130;
+	 color: #333;
+	 font-family: 'Raleway', sans-serif;
+}
+
+ h1 {
+	 font-size: 2.5rem;
+	 font-weight: 300;
+	 margin: 1.5em 0.5rem 1em;
+	 text-align: center;
+}
+ .container {
+	 margin: 0 auto;
+	 padding: 2rem;
+	 max-width: 1600px;
+}
+ .row {
+	 display: flex;
+}
+ .col {
+	 color: #fff;
+	 flex: 1 1 auto;
+	 min-height: 400px;
+	 position: relative;
+}
+ .col h2 {
+	 font-weight: 300;
+	 font-size: 1.33333rem;
+	 line-height: 1.25;
+	 margin: 0;
+	 position: absolute;
+	 bottom: 1.5rem;
+	 right: 1.5rem;
+	 z-index: 0;
+}
+ .col:nth-child(2) {
+	 min-width: 20%;
+}
+ .col:nth-child(4) {
+	 min-width: 33%;
+}
+ .col:nth-child(3) + .col:nth-child(3) {
+	 min-width: 50%;
+}
+ .photo-container {
+	 background: #0f0523 50% 50% / cover;
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 left: 0;
+	 transition: 1s;
+	 transform-origin: bottom right;
+}
+ .photo-container::before {
+	 background: linear-gradient(transparent, rgba(67, 17, 51, 0.5), #000320);
+	 content: '';
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 left: 0;
+}
+ .col:hover .photo-container {
+	 transform: scale(1.25);
+}
+
+ .slide {
+   	 font-family: 'Raleway', sans-serif;
+     font-size: 20px;
+     color: white;
+	 background: rgba(25, 1, 21, 0.8);
+	 padding: 0 1.5rem;
+     border: none;
+}
+
+  .slide:focus {
+  outline: none;
+  }
+
+  table {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 25px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 10px;
+  }
+
+  td {
+  text-align: center;
+  border: 1px solid white;
+  width: 300px;
+  height: 400px;
+  border-radius: 5px;
+  }
+
+  .prod_img {
+  height: 300px;
+  width: 280px;
+  padding: 0 auto;
+  margin: 0 auto;
+  border-radius: 5px;
+  }
+
+  .prod_button {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  color: white;
+  background: transparent;
+  width: 300px;
+  height: 400px;
+  border-radius: 5px;
+  }
+
+  .prod_button:hover {
+  border-color: #2A2145;
+  }
+
+  .cart {
+  color: white;
+  background-color: transparent;
+  border: none;
+  float: right;
+  margin-top: 15px;
+  }
+
+  .cart_counter {
+  background-color: red;
+  width: 15px;
+  height: 15px;
+  border-radius: 6px;
+  float: right;
+  }
+
+  .cart_img {
+  width: 50px;
+  height: 50px;
+  }
+
+  .add_to_cart_button {
+  font-family: 'Raleway', sans-serif;
+  width: 300px;
+  height: 50px;
+  background-color: #9988be;
+  color: white;
+  font-size: 30px;
+  }
+
+  .add_to_cart_button:hover {
+  border: 1px solid gray;
+  }
+
+  .cart:focus {
+  outline: none;
+  }
+
+  .cart_td {
+  position: relative;
+  width: 1000px;
+  height: 200px;
+  margin-top: 0 auto;
+  margin-bottom: 0 auto;
+  }
+
+  .cart_prod_img {
+  padding-left: 20px;
+  width: 150px;
+  height: 140px;
+  float: left;
+  }
+
+  .order_button {
+  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
+  background-color: #9988be;
+  width: 500px;
+  height: 100px;
+  border-radius: 15px;
+  color: white;
+  }
+
+  .order_button:focus {
+  outline: none;
+  }
+
+  .order_button:hover {
+  border: 2px solid white;
+  }
+
+  .center {
+  margin: 0;
+  position: absolute;
+  left: 37%;
+  }
+
+  .cart_input {
+  font-size: 25px;
+  width: 55px;
+  height: 30px;
+  border-radius: 7px;
+  }
+
+  .cart_input:focus {
+  outline: none;
+  }
+
+  p {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  }
+
+  .order_total {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
+  color: white;
+  }
+
+  .showcase_input {
+  text-align: center;
+  font-size: 30px;
+  width: 140px;
+  height: 50px;
+  border-radius: 10px;
+  color: black;
+  }
+
+  .showcase_input {
+  outline: none;
+  }
+
+  .showcase_input_button {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-size: 30px;
+  width: 140px;
+  height: 50px;
+  border-radius: 10px;
+  color: white;
+  background-color: #9988be;
+  }
+
+  .showcase_input_button:focus {
+  outline: none;
+  }
+
+  .specific_prod_img {
+  width: 600px;
+  height: 700px;
+  border-radius: 30px;
+  margin-left: 50px;
+  margin-top: 50px;
+  display: inline-flex;
+  }
+
+  .specific_prod_name {
+  position: fixed;
+  font-family: 'Raleway', sans-serif;
+  font-size: 70px;
+  color: white;
+  margin-left: 100px;
+  top: 150px;
+  display: inline-flex;
+  }
+
+  .specific_prod_description {
+  position: fixed;
+  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
+  color: white;
+  margin-left: 100px;
+  top: 250px;
+  width: 500px;
+  display: inline-flex;
+  }
+
+  .specific_prod_price {
+  position: fixed;
+  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
+  color: white;
+  margin-left: 100px;
+  top: 550px;
+  width: 500px;
+  display: inline-flex;
+  }
+
+  .specific_prod_input {
+  text-align: center;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  position: fixed;
+  font-size: 50px;
+  color: black;
+  margin-left: 700px;
+  top: 700px;
+  width: 400px;
+  }
+
+  .specific_prod_input:focus {
+  outline: none;
+  }
+
+  .specific_prod_button {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border: 2px solid white;
+  position: fixed;
+  font-size: 50px;
+  color: white;
+  margin-left: 1100px;
+  top: 700px;
+  width: 400px;
+  background-color: #9988be;
+  }
+
+  .specific_prod_button {
+  outline: none;
+  }
+
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="title"><a href="{% url 'main-page' %}">Sweetland</a></div>
+    <div class="ghli"><a href="">github</a></div>
+    <div class="ghli"><a href="">linkedin</a></div>
+        <form action="{% url 'cart' %}">
+            <button type="submit" class="cart">
+                {% load static %}
+                <img src="{% static 'sweetlandapp/cart.png' %}" class="cart_img">
+                 <div class="cart_counter">
+                     {{ cart_counter }}
+                 </div>
+            </button>
+        </form>
+</header>
+
+{% block content %}
+{% endblock %}
+
+<div class="created_for">Created for <a href="">TeachMeSkills</a>, by <a href="">DmitryLazarev</a></div>
+
+</body>
+</html>

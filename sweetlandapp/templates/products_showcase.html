@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div style="color: red; text-align: center; font-size: 30px;">{{ err }}</div>
+
+
+<table>
+    <tr>
+    {% for product in products %}
+        <td>
+            <form action="{% url 'specific-product' product_id=product.id %}">
+               <button type="submit" class="prod_button">
+                   <div style="font-size: 30px;"></div><br>
+               {% load static %}
+               <img src="{{ product.image.url }}" class="prod_img"><br>
+                   <div style="max-width: 300px; font-size: 20px;">{{ product.description }}</div>
+                   <div style="font-size: 30px;">{{ product.price }}</div><br>
+               </button>
+            </form>
+            {% if product.id != product_id %}
+            <form action="{% url 'products-showcase' product_type=product.product_type product_id=product.id %}" method="post">
+                <button type="submit" class="add_to_cart_button">
+                    add to cart
+                </button>
+            </form>
+            {% else %}
+            <form action="{% url 'add-to-cart' id=product.id %}" method="get">
+            <input type="number" value="{{ quantity }}" class="showcase_input" name="quantity">
+                    <button type="submit" class="showcase_input_button">
+                    submit
+                    </button>
+            </form>
+            {% endif %}
+        </td>
+        {% if forloop.counter|divisibleby:5 %}
+    </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+{% endblock %}

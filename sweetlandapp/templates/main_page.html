@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {% load static %}
+            <div class="photo-container" style="background-image:url({% static 'sweetlandapp/chocolate.jpg' %});"></div>
+            <h2> Сhocolate </h2>
+            <form action="{% url 'products-showcase' product_type='chocolate' product_id=0 %}">
+                <button class="slide" type="submit">
+                Chocolate is a food made from cacao beans. It is used in many desserts like pudding, cakes, candy, ice cream, and Easter eggs. It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate.
+                </button>
+            </form>
+        </div>
+        <div class="col">
+                    {% load static %}
+            <div class="photo-container" style="background-image:url({% static 'sweetlandapp/candy.jpg' %});"></div>
+            <h2>Candy </h2>
+            <div class="">
+            <form action="{% url 'products-showcase' product_id=0 product_type='candy' %}">
+                <button type="submit" class="slide">
+                Candy - sweet food product, the main constituent of which generally is sugar.
+                </button>
+            </form>
+            </div>
+        </div>
+        <div class="col">
+                 {% load static %}
+            <div class="photo-container" style="background-image:url({% static 'sweetlandapp/cake.jpg' %});"></div>
+            <h2>Cake </h2>
+            <div class="">
+                <form action="{% url 'products-showcase' product_id=0 product_type='cake' %}">
+                <button type="submit" class="slide">
+                Cake is a form of sweet food made from flour, sugar, and other ingredients, that is usually baked.
+                </button>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+                       {% load static %}
+            <div class="photo-container" style="background-image:url({% static 'sweetlandapp/marshmallow.png' %});"></div>
+            <h2>Marshmallow </h2>
+            <div class="">
+                <form action="{% url 'products-showcase' product_id=0 product_type='marshmallow' %}">
+                <button type="submit" class="slide">
+                Marshmallow, aerated candy that originated as a versatile medicinal syrup and ointment; it was made from root sap of the marsh mallow, sugar, and egg white.</p>
+                </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+                      {% load static %}
+            <div class="photo-container" style="background-image:url({% static 'sweetlandapp/cookies.jpg' %});"></div>
+            <h2>Cookies </h2>
+            <div class="">
+                <form action="{% url 'products-showcase' product_id=0 product_type='cookies' %}">
+                <button type="submit" class="slide">
+                Cookie, primarily in the United States, any of various small sweet cakes, either flat or slightly raised, cut from rolled dough, dropped from a spoon, cut into pieces after baking, or curled with a special iron.
+                </button>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+             {% load static %}
+            <div class="photo-container" style="background-image:url({% static 'sweetlandapp/marmalade.jpg' %});"></div>
+            <h2>Marmalade </h2>
+            <div class="">
+                <form action="{% url 'products-showcase' product_id=0 product_type='marmalade' %}">
+                <button type="submit" class="slide">
+                Marmalade is a mixture, brought to a suitable gelled consistency, of water, sugars and fruit pulp, fruit purée, fruit juice, fruit peel or aqueous extract of fruit or any combination thereof, in every case obtained from citrus fruit.
+                </button>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+                    {% load static %}
+            <div class="photo-container" style="background-image:url({% static 'sweetlandapp/gingerbread.jpg' %});"></div>
+            <h2>Gingerbread</h2>
+            <div class="">
+                <form action="{% url 'products-showcase' product_id=0 product_type='gingerbread' %}">
+                <button type="submit" class="slide">
+                Gingerbread refers to a broad category of baked goods, typically flavored with ginger, cloves, nutmeg and cinnamon and sweetened with honey, sugar or molasses.
+                </button>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+            {% load static %}
+            <div class="photo-container" style="background-image:url({% static 'sweetlandapp/hazelnut_cocoa_spread.jpg' %});"></div>
+            <h2>Hazelnut cocoa spread</h2>
+            <div class="">
+                <form action="{% url 'products-showcase' product_id=0 product_type='hazelnut cocoa spread' %}">
+                <button type="submit" class="slide">
+                Hazelnut butter is a food spread made from crushed and blended hazelnuts. More commonly found in Europe, hazelnut butter is also familiar when mixed with chocolate as an ingredient in chocolate spreads.
+                </button>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+            {% load static %}
+            <div class="photo-container" style="background-image:url({% static 'sweetlandapp/caramel.jpg' %});"></div>
+            <h2>Сaramel </h2>
+            <div class="">
+                <form action="{% url 'products-showcase' product_id=0 product_type='caramel' %}">
+                <button type="submit" class="slide">
+                Caramel is a medium to dark-orange confectionery product made by heating a variety of sugars. It can be used as a flavoring in puddings and desserts, as a filling in bonbons, or as a topping for ice cream, and custard.
+                </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
