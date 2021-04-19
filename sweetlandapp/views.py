@@ -135,6 +135,9 @@ def send_mail_sw(request):
 
 def cart_clear(request):
     Cart.objects.all().delete()
-    return redirect('cart-clear')
+    return redirect('main-page')
 
 
+def prod_clear(request):
+    Products.objects.all().delete()
+    return redirect('main-page')
