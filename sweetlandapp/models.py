@@ -15,7 +15,7 @@ class Cart(models.Model):
     image = models.FileField(upload_to='static/sweetlandapp')
     description = models.CharField(max_length=35)
     full_description = models.CharField(max_length=255)
-    product_type = models.CharField(max_length=15)
+    product_type = models.CharField(max_length=50)
     price = models.FloatField()
     quantity = models.IntegerField()
     product = models.OneToOneField(

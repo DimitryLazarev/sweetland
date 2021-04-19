@@ -3,13 +3,11 @@
 <div class="order_total"> Total price: {{ total }}</div>
 <form action="{% url 'send-mail-sw' %}" method="post">
         {% csrf_token %}
-    {% if request.user.is_authenticated %}
 <div class="order_form">{{ form.as_p }}</div>
     <div class="center">
     <button class="order_button">
         buy
     </button>
     </div>
-    {% endif %}
 </form>
 {% endblock %}
